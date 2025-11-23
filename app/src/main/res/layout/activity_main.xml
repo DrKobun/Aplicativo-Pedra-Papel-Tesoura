@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9">
+
+    <!-- Título Principal -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Pedra, Papel e Tesoura"
+        android:textColor="#1B5E20"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Placar -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Jogador"
+        android:textColor="#388E3C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Máquina"
+        android:textColor="#388E3C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/placarJogador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textColor="#1B5E20"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/placarMaquina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#1B5E20"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/placarJogador"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3" />
+
+    <!-- Escolha da Máquina -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Escolha da máquina:"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placarJogador" />
+
+    <ImageView
+        android:id="@+id/imageResultado"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/padrao" />
+
+    <!-- Resultado e Escolhas do Jogador -->
+    <TextView
+        android:id="@+id/textResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Faça sua escolha!"
+        android:textColor="#4CAF50"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/cardPapel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageResultado" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPedra"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="selecionadoPedra"
+        app:cardCornerRadius="164dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textoPedra"
+        app:layout_constraintEnd_toStartOf="@+id/cardPapel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pedra" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textoPedra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Pedra"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardPedra"
+        app:layout_constraintStart_toStartOf="@+id/cardPedra" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPapel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="selecionadoPapel"
+        app:cardCornerRadius="164dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardPedra"
+        app:layout_constraintEnd_toStartOf="@+id/cardTesoura"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardPedra"
+        app:layout_constraintTop_toTopOf="@+id/cardPedra">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/papel" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textoPapel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Papel"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textoPedra"
+        app:layout_constraintEnd_toEndOf="@+id/cardPapel"
+        app:layout_constraintStart_toStartOf="@+id/cardPapel" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTesoura"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="selecionadoTesoura"
+        app:cardCornerRadius="164dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardPapel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardPapel"
+        app:layout_constraintTop_toTopOf="@+id/cardPapel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tesoura" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textoTesoura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tesoura"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textoPapel"
+        app:layout_constraintEnd_toEndOf="@+id/cardTesoura"
+        app:layout_constraintStart_toStartOf="@+id/cardTesoura" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
